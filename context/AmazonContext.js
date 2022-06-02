@@ -38,7 +38,7 @@ export const AmazonProvider = ({ children }) => {
     data: assetsData,
     error: assetsDataError,
     isLoading: assetsDataIsLoading,
-  } = useMoralisQuery('Assets')
+  } = useMoralisQuery('assets')
 
   useEffect(  () => {
     (async() => {console.log(assetsData)
@@ -167,8 +167,8 @@ export const AmazonProvider = ({ children }) => {
 
       if (receipt) {
         //You can do this but it's not necessary with Moralis hooks!
-        // const query = new Moralis.Query('_User')
-        // const results = await query.find()
+         const query = new Moralis.Query('_User')
+         const results = await query.find()
 
         const res = userData[0].add('ownedAsset', {
           ...asset,
@@ -188,8 +188,8 @@ export const AmazonProvider = ({ children }) => {
   const getAssets = async () => {
     try {
       await enableWeb3()
-      // const query = new Moralis.Query('Assets')
-      // const results = await query.find()
+      const query = new Moralis.Query('assets')
+      const results = await query.find()
 
       setAssets(assetsData)
     } catch (error) {
@@ -209,8 +209,8 @@ export const AmazonProvider = ({ children }) => {
 
   const getOwnedAssets = async () => {
     try {
-      // let query = new Moralis.Query('_User')
-      // let results = await query.find()
+       let query = new Moralis.Query('_User')
+      let results = await query.find()
 
       if (userData[0]) {
         setOwnedItems(prevItems => [
