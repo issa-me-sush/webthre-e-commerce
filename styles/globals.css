@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 body {
-  background: rgb(248, 248, 248);
+  background: rgb(139, 189, 240);
+  background-image: linear-gradient(rgb(110, 167, 231), rgb(241, 241, 238));
   font-family: 'Ubuntu', sans-serif;
 }
